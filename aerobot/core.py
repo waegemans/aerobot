@@ -19,7 +19,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 print(config.sections())
 
-bot = Bot(config['telegram api']['token'],config['telegram api']['url'])
+bot = Bot(config['telegram api']['token'],config['telegram api']['url'],config['telegram api']['whitelisted'].split())
 
 relay = gpiozero.DigitalOutputDevice(18,False)
 
